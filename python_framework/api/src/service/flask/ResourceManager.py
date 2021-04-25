@@ -151,11 +151,6 @@ def addServiceListTo(apiInstance,serviceList) :
         apiInstance.bindResource(apiInstance,service())
 
 @Function
-def addSchedulerListTo(apiInstance,schedulerList) :
-    for scheduler in schedulerList :
-        apiInstance.bindResource(apiInstance,scheduler())
-
-@Function
 def addClientListTo(apiInstance,clientList) :
     for client in clientList :
         apiInstance.bindResource(apiInstance,client())
@@ -204,7 +199,6 @@ def addFlaskApiResources(
         appInstance,
         jwtInstance,
         controllerList,
-        schedulerList,
         serviceList,
         clientList,
         repositoryList,
@@ -223,7 +217,6 @@ def addFlaskApiResources(
     addRepositoryTo(apiInstance, repositoryList, model)
     addServiceListTo(apiInstance, serviceList)
     addClientListTo(apiInstance, clientList)
-    addSchedulerListTo(apiInstance, schedulerList)
     addControllerListTo(apiInstance, controllerList)
     addValidatorListTo(apiInstance, validatorList)
     addMapperListTo(apiInstance, mapperList)
